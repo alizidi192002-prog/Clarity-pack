@@ -1,0 +1,456 @@
+{
+ "link": "https://claritydigital8.gumroad.com/",
+ "boards": {
+  "main": "1149614311072230535",
+  "debt": "1149614311072245490",
+  "savings": "1149614311072245491",
+  "biz": "1149614311072245492"
+ },
+ "schedule_start": "2026-09-28",
+ "new_pins_by_day": [
+  {
+   "date": "2026-09-28",
+   "pins": [
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/debt_a.jpg",
+     "board_id": "1149614311072245490",
+     "product": "Debt Snowball & Avalanche Tracker",
+     "title": "Debt Snowball Spreadsheet – Get Out of Debt Faster (Excel & Google Sheets)",
+     "description": "Get out of debt faster with a debt snowball spreadsheet that ranks your debts and shows your debt free date. Debt payoff planner for Excel and Google Sheets, instant download. #debtsnowball #debtpayoff #debtfreejourney #payoffdebt #budgeting",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/budget_a.jpg",
+     "board_id": "1149614311072230535",
+     "product": "50/30/20 Monthly Budget Planner",
+     "title": "Monthly Budget Spreadsheet for Beginners – 50/30/20 Budget Template",
+     "description": "A simple monthly budget spreadsheet for beginners using the 50/30/20 rule. Plan needs, wants and savings with auto totals. Budget template for Excel & Google Sheets. #budgetspreadsheet #budgetingforbeginners #503020budget #moneysavingtips #budgettemplate",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/subscription_a.jpg",
+     "board_id": "1149614311072230535",
+     "product": "Subscription & Bill Tracker",
+     "title": "Bill Tracker Spreadsheet – Monthly Bills Organizer (Google Sheets)",
+     "description": "Never miss a due date with this bill tracker spreadsheet. See every monthly bill and subscription with its real yearly cost. Excel & Google Sheets, instant download. #billtracker #billsorganizer #monthlybills #budgeting #googlesheets",
+     "link": "https://claritydigital8.gumroad.com/"
+    }
+   ]
+  },
+  {
+   "date": "2026-09-29",
+   "pins": [
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/habit_a.jpg",
+     "board_id": "1149614311072230535",
+     "product": "Monthly Habit Tracker",
+     "title": "Habit Tracker Spreadsheet – Monthly Habit Tracker Google Sheets",
+     "description": "Build better habits with a monthly habit tracker spreadsheet. 31-day grid with automatic completion rates. Use in Google Sheets or Excel, or print it. #habittracker #habittrackerideas #selfcare #productivity #goals",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/meal_a.jpg",
+     "board_id": "1149614311072230535",
+     "product": "Weekly Meal Planner + Grocery List",
+     "title": "Weekly Meal Planner Template – Meal Planning Spreadsheet with Grocery List",
+     "description": "Plan your week of meals in minutes with this weekly meal planner template and grocery list. Save time and money on groceries. Excel & Google Sheets. #mealplanner #mealplanningideas #weeklymealplan #grocerylist #familymeals",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/savings_a.jpg",
+     "board_id": "1149614311072245491",
+     "product": "Savings & Sinking Funds Tracker",
+     "title": "Sinking Funds Tracker Spreadsheet – Savings Goals Tracker",
+     "description": "Save for every goal with a sinking funds tracker spreadsheet. Monthly amount per goal, progress bars and target dates. Excel & Google Sheets. #sinkingfunds #savingsgoals #savingschallenge #moneysavingtips #budgeting",
+     "link": "https://claritydigital8.gumroad.com/"
+    }
+   ]
+  },
+  {
+   "date": "2026-09-30",
+   "pins": [
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/networth_a.jpg",
+     "board_id": "1149614311072245491",
+     "product": "Net Worth Tracker",
+     "title": "Net Worth Tracker Spreadsheet – Track Your Net Worth Monthly",
+     "description": "Track your net worth every month with this net worth tracker spreadsheet: assets, debts and growth chart. Excel & Google Sheets, instant download. #networth #networthtracker #financialindependence #wealthbuilding #moneygoals",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/bookkeeping_a.jpg",
+     "board_id": "1149614311072245492",
+     "product": "Small Business Bookkeeping",
+     "title": "Small Business Bookkeeping Template – Simple Income & Expense Spreadsheet",
+     "description": "Simple bookkeeping for small business owners: log income and expenses and get a monthly profit and loss automatically. Excel & Google Sheets. #bookkeepingtemplate #smallbusinessowner #expensetracker #smallbusinesstips #entrepreneur",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/metaads_a.jpg",
+     "board_id": "1149614311072245492",
+     "product": "Meta Ads Campaign Tracker",
+     "title": "Facebook Ads Tracker Spreadsheet – Track ROAS & CPA (Google Sheets)",
+     "description": "Know which Facebook ads make money. This Facebook ads tracker spreadsheet calculates ROAS, CPA and CTR per campaign. Excel & Google Sheets. #facebookads #facebookadstips #roas #digitalmarketing #onlinebusiness",
+     "link": "https://claritydigital8.gumroad.com/"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-01",
+   "pins": [
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/debt_b.jpg",
+     "board_id": "1149614311072245490",
+     "product": "Debt Snowball & Avalanche Tracker",
+     "title": "Debt Payoff Calculator Spreadsheet – See Your Debt Free Date",
+     "description": "Enter your balances and interest rates and this debt payoff calculator shows your debt free date and monthly plan. Credit card payoff tracker for Excel & Google Sheets. #debtpayoffcalculator #debtfree #creditcarddebt #moneytips #personalfinance",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/budget_b.jpg",
+     "board_id": "1149614311072230535",
+     "product": "50/30/20 Monthly Budget Planner",
+     "title": "Budget Planner Google Sheets – Paycheck Budget Template",
+     "description": "Plan every paycheck with this budget planner for Google Sheets and Excel. Planned vs actual spending, over-budget alerts and savings tracking. Instant download. #budgetplanner #paycheckbudget #googlesheetsbudget #personalfinance #savemoney",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/subscription_b.jpg",
+     "board_id": "1149614311072230535",
+     "product": "Subscription & Bill Tracker",
+     "title": "Subscription Tracker Template – Find Subscriptions to Cancel & Save Money",
+     "description": "List all your subscriptions and see what they really cost per year. This subscription tracker helps you cancel what you do not use and save money. #subscriptiontracker #savemoney #moneysavingtips #frugalliving #budgettips",
+     "link": "https://claritydigital8.gumroad.com/"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-02",
+   "pins": [
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/habit_b.jpg",
+     "board_id": "1149614311072230535",
+     "product": "Monthly Habit Tracker",
+     "title": "Printable Habit Tracker – 31 Day Habit Tracker Template",
+     "description": "Printable 31 day habit tracker template to track workouts, reading, water and more. Digital or print, instant download for Excel & Google Sheets. #printablehabittracker #monthlyhabittracker #selfimprovement #morningroutine #plannerideas",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/meal_b.jpg",
+     "board_id": "1149614311072230535",
+     "product": "Weekly Meal Planner + Grocery List",
+     "title": "Meal Plan on a Budget – Printable Meal Planner & Grocery List",
+     "description": "Eat well on a budget with a printable meal planner and grocery list. Track your weekly food budget and stop wasting food. Instant download spreadsheet. #mealplanonabudget #budgetmeals #grocerybudget #frugalmeals #mealprep",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/savings_b.jpg",
+     "board_id": "1149614311072245491",
+     "product": "Savings & Sinking Funds Tracker",
+     "title": "Emergency Fund Tracker – Savings Tracker Printable & Digital",
+     "description": "Build your emergency fund step by step with this savings tracker. See how much to save each month and watch your progress grow. Instant download. #emergencyfund #savingstracker #savemoney #financialgoals #personalfinance",
+     "link": "https://claritydigital8.gumroad.com/"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-03",
+   "pins": [
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/networth_b.jpg",
+     "board_id": "1149614311072245491",
+     "product": "Net Worth Tracker",
+     "title": "Net Worth Calculator Template – Assets and Liabilities Spreadsheet",
+     "description": "A simple net worth calculator: list your assets and liabilities and see your real net worth with monthly history. Excel & Google Sheets template. #networthcalculator #personalfinance #fire #investing #financialplanning",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/bookkeeping_b.jpg",
+     "board_id": "1149614311072245492",
+     "product": "Small Business Bookkeeping",
+     "title": "Expense Tracker Spreadsheet for Small Business – Profit & Loss Template",
+     "description": "Track business expenses and income in one spreadsheet with a linked profit and loss summary. Great for Etsy sellers and side hustles. Instant download. #profitandloss #businessexpenses #etsysellertips #sidehustle #smallbusiness",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/metaads_b.jpg",
+     "board_id": "1149614311072245492",
+     "product": "Meta Ads Campaign Tracker",
+     "title": "Meta Ads Reporting Template – Ad Campaign Tracker for Small Business",
+     "description": "A simple Meta ads reporting template for small businesses and ecommerce stores. Log spend and results, get ROAS and CPA automatically. #metaads #instagramads #ecommercetips #marketingtips #smallbusinessmarketing",
+     "link": "https://claritydigital8.gumroad.com/"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-04",
+   "pins": [
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/debt_c.jpg",
+     "board_id": "1149614311072245490",
+     "product": "Debt Snowball & Avalanche Tracker",
+     "title": "Debt Avalanche vs Snowball Tracker – Printable Debt Payoff Planner",
+     "description": "Compare the debt avalanche vs debt snowball method in one debt payoff planner. Pay less interest and stay motivated. Excel & Google Sheets template, instant download. #debtavalanche #debtsnowball #debttracker #financialfreedom #budgettemplate",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/budget_c.jpg",
+     "board_id": "1149614311072230535",
+     "product": "50/30/20 Monthly Budget Planner",
+     "title": "Simple Budget Template Excel – Monthly Budget Planner Printable",
+     "description": "Take control of your money with a simple monthly budget planner. 50/30/20 rule, 12 monthly tabs and a yearly summary. Excel & Google Sheets budget template. #budgettemplate #monthlybudget #financialplanning #frugalliving #budgetplanner",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/subscription_c.jpg",
+     "board_id": "1149614311072230535",
+     "product": "Subscription & Bill Tracker",
+     "title": "Bill Payment Tracker Printable – Monthly Bill Checklist Spreadsheet",
+     "description": "Bill payment tracker and monthly bill checklist in one spreadsheet. Due dates, billing cycles and yearly totals calculated for you. Excel & Google Sheets. #billpaymentchecklist #billtracker #personalfinance #budgetplanner #organization",
+     "link": "https://claritydigital8.gumroad.com/"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-05",
+   "pins": [
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/habit_c.jpg",
+     "board_id": "1149614311072230535",
+     "product": "Monthly Habit Tracker",
+     "title": "Digital Habit Tracker – Daily Habit Tracker with Progress Stats",
+     "description": "A digital daily habit tracker that calculates your completion rate and streaks for you. Simple, clean and easy to use in Google Sheets and Excel. #digitalplanner #habittracker #selfdevelopment #healthyhabits #goalsetting",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/meal_c.jpg",
+     "board_id": "1149614311072230535",
+     "product": "Weekly Meal Planner + Grocery List",
+     "title": "Digital Meal Planner Google Sheets – Family Meal Planning Template",
+     "description": "A digital meal planner for Google Sheets and Excel: breakfast, lunch and dinner grid plus a grocery checklist. Perfect for busy families. #digitalmealplanner #familymealplanning #mealprepideas #weeklyplanner #organizedhome",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/savings_c.jpg",
+     "board_id": "1149614311072245491",
+     "product": "Savings & Sinking Funds Tracker",
+     "title": "Savings Plan Template – Save Money Tracker for Google Sheets",
+     "description": "A savings plan template that tells you exactly how much to save per month for each goal: vacation, car, gifts and more. Excel & Google Sheets. #savingsplan #savemoneytracker #savingsgoal #frugalliving #budgetplanner",
+     "link": "https://claritydigital8.gumroad.com/"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-06",
+   "pins": [
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/networth_c.jpg",
+     "board_id": "1149614311072245491",
+     "product": "Net Worth Tracker",
+     "title": "Wealth Tracker Google Sheets – Financial Freedom Net Worth Planner",
+     "description": "Stay motivated on your financial freedom journey with a wealth tracker for Google Sheets. Monthly net worth, milestones and a growth chart. #financialfreedom #wealthtracker #googlesheets #moneymindset #networthgoals",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/bookkeeping_c.jpg",
+     "board_id": "1149614311072245492",
+     "product": "Small Business Bookkeeping",
+     "title": "Bookkeeping Spreadsheet for Etsy Sellers & Side Hustles",
+     "description": "Easy bookkeeping spreadsheet for Etsy sellers, freelancers and side hustles. Categories, monthly summary and profit calculated for you. Excel & Google Sheets. #etsyseller #freelancer #bookkeeping #sidehustleideas #businessorganization",
+     "link": "https://claritydigital8.gumroad.com/"
+    },
+    {
+     "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/metaads_c.jpg",
+     "board_id": "1149614311072245492",
+     "product": "Meta Ads Campaign Tracker",
+     "title": "Ad Spend Tracker for Ecommerce – Instagram & Facebook Ads Spreadsheet",
+     "description": "Track your ad spend and results across Instagram and Facebook ads with one spreadsheet. ROAS, CPA and weekly performance view. Instant download. #adspend #ecommercebusiness #shopifytips #facebookmarketing #instagrammarketing",
+     "link": "https://claritydigital8.gumroad.com/"
+    }
+   ]
+  }
+ ],
+ "repost_pool": [
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/debt.jpg",
+   "board_id": "1149614311072245490",
+   "product": "Debt Snowball & Avalanche Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/budget.jpg",
+   "board_id": "1149614311072230535",
+   "product": "50/30/20 Monthly Budget Planner"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/subscription.jpg",
+   "board_id": "1149614311072230535",
+   "product": "Subscription & Bill Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/habit.jpg",
+   "board_id": "1149614311072230535",
+   "product": "Monthly Habit Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/meal.jpg",
+   "board_id": "1149614311072230535",
+   "product": "Weekly Meal Planner + Grocery List"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/savings.jpg",
+   "board_id": "1149614311072245491",
+   "product": "Savings & Sinking Funds Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/networth.jpg",
+   "board_id": "1149614311072245491",
+   "product": "Net Worth Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/bookkeeping.jpg",
+   "board_id": "1149614311072245492",
+   "product": "Small Business Bookkeeping"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/metaads.jpg",
+   "board_id": "1149614311072245492",
+   "product": "Meta Ads Campaign Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/debt_a.jpg",
+   "board_id": "1149614311072245490",
+   "product": "Debt Snowball & Avalanche Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/budget_a.jpg",
+   "board_id": "1149614311072230535",
+   "product": "50/30/20 Monthly Budget Planner"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/subscription_a.jpg",
+   "board_id": "1149614311072230535",
+   "product": "Subscription & Bill Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/habit_a.jpg",
+   "board_id": "1149614311072230535",
+   "product": "Monthly Habit Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/meal_a.jpg",
+   "board_id": "1149614311072230535",
+   "product": "Weekly Meal Planner + Grocery List"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/savings_a.jpg",
+   "board_id": "1149614311072245491",
+   "product": "Savings & Sinking Funds Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/networth_a.jpg",
+   "board_id": "1149614311072245491",
+   "product": "Net Worth Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/bookkeeping_a.jpg",
+   "board_id": "1149614311072245492",
+   "product": "Small Business Bookkeeping"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/metaads_a.jpg",
+   "board_id": "1149614311072245492",
+   "product": "Meta Ads Campaign Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/debt_b.jpg",
+   "board_id": "1149614311072245490",
+   "product": "Debt Snowball & Avalanche Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/budget_b.jpg",
+   "board_id": "1149614311072230535",
+   "product": "50/30/20 Monthly Budget Planner"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/subscription_b.jpg",
+   "board_id": "1149614311072230535",
+   "product": "Subscription & Bill Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/habit_b.jpg",
+   "board_id": "1149614311072230535",
+   "product": "Monthly Habit Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/meal_b.jpg",
+   "board_id": "1149614311072230535",
+   "product": "Weekly Meal Planner + Grocery List"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/savings_b.jpg",
+   "board_id": "1149614311072245491",
+   "product": "Savings & Sinking Funds Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/networth_b.jpg",
+   "board_id": "1149614311072245491",
+   "product": "Net Worth Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/bookkeeping_b.jpg",
+   "board_id": "1149614311072245492",
+   "product": "Small Business Bookkeeping"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/metaads_b.jpg",
+   "board_id": "1149614311072245492",
+   "product": "Meta Ads Campaign Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/debt_c.jpg",
+   "board_id": "1149614311072245490",
+   "product": "Debt Snowball & Avalanche Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/budget_c.jpg",
+   "board_id": "1149614311072230535",
+   "product": "50/30/20 Monthly Budget Planner"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/subscription_c.jpg",
+   "board_id": "1149614311072230535",
+   "product": "Subscription & Bill Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/habit_c.jpg",
+   "board_id": "1149614311072230535",
+   "product": "Monthly Habit Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/meal_c.jpg",
+   "board_id": "1149614311072230535",
+   "product": "Weekly Meal Planner + Grocery List"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/savings_c.jpg",
+   "board_id": "1149614311072245491",
+   "product": "Savings & Sinking Funds Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/networth_c.jpg",
+   "board_id": "1149614311072245491",
+   "product": "Net Worth Tracker"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/bookkeeping_c.jpg",
+   "board_id": "1149614311072245492",
+   "product": "Small Business Bookkeeping"
+  },
+  {
+   "image_url": "https://raw.githubusercontent.com/alizidi192002-prog/Clarity-pack/main/pack/pins/v2/metaads_c.jpg",
+   "board_id": "1149614311072245492",
+   "product": "Meta Ads Campaign Tracker"
+  }
+ ],
+ "repost_rule": "From 2026-10-07 onward: each day post 3 pins from repost_pool, cycling in order. Index for day n (n=0 on 2026-10-07) = (3n, 3n+1, 3n+2) mod pool length. Always write a NEW keyword-rich English title (<=100 chars) and a new description with 3-5 search keywords + 5 hashtags; never reuse an earlier title."
+}
