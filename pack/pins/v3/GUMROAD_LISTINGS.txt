@@ -3,7 +3,7 @@ GUMROAD — 6 منتجات جداد (كوبي-بايست)
 
 ════════════════════════════════════════════
 1) 2027 Budget Planner
-Price: $6.99
+Price: €6.99
 File: 2027_Budget_Planner.xlsx     Cover: cover_budget2027.png
 Tags: budget planner, 2027 planner, budget spreadsheet, yearly budget, google sheets budget
 
@@ -19,7 +19,7 @@ Works in Excel, Google Sheets and Numbers. Instant download (.xlsx). Example num
 
 ════════════════════════════════════════════
 2) Christmas & Holiday Budget Planner
-Price: $4.99
+Price: €4.99
 File: Christmas_Holiday_Budget_Planner.xlsx     Cover: cover_christmas.png
 Tags: christmas budget, holiday budget planner, gift list, christmas planner, budget spreadsheet
 
@@ -35,7 +35,7 @@ Reuse it every year. Works in Excel, Google Sheets and Numbers. Instant download
 
 ════════════════════════════════════════════
 3) Paycheck to Paycheck Budget Planner
-Price: $4.99
+Price: €4.99
 File: Paycheck_Budget_Planner.xlsx     Cover: cover_paycheck.png
 Tags: paycheck budget, paycheck to paycheck, bill tracker, budget spreadsheet, biweekly budget
 
@@ -52,7 +52,7 @@ Works in Excel, Google Sheets and Numbers. Instant download (.xlsx).
 
 ════════════════════════════════════════════
 4) Freelancer Income & Invoice Tracker
-Price: $6.99
+Price: €6.99
 File: Freelancer_Income_Invoice_Tracker.xlsx     Cover: cover_freelancer.png
 Tags: freelancer invoice tracker, income tracker, small business, self employed, invoice spreadsheet
 
@@ -69,7 +69,7 @@ Works in Excel, Google Sheets and Numbers. Instant download (.xlsx). A planning 
 
 ════════════════════════════════════════════
 5) Wedding Budget Planner
-Price: $6.99
+Price: €6.99
 File: Wedding_Budget_Planner.xlsx     Cover: cover_wedding.png
 Tags: wedding budget, wedding planner, wedding spreadsheet, guest list, wedding checklist
 
@@ -85,7 +85,7 @@ Works in Excel, Google Sheets and Numbers. Instant download (.xlsx).
 
 ════════════════════════════════════════════
 6) Complete Budget & Planner Bundle — 14 Spreadsheets
-Price: $19.99
+Price: €19.99
 File: Complete_Planner_Bundle.zip     Cover: cover_bundle.png
 Tags: budget bundle, planner bundle, budget spreadsheet, finance templates, google sheets templates
 
