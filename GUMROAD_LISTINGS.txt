@@ -1,0 +1,146 @@
+GUMROAD — 6 منتجات جداد (كوبي-بايست)
+لكل منتج: New product ← Digital product ← حط الاسم والسعر ← ارفع الملف (.xlsx ولا .zip) ← Cover = cover_xxx.png ← انسخ الوصف ← Tags ← Publish
+
+════════════════════════════════════════════
+1) 2027 Budget Planner
+Price: $6.99
+File: 2027_Budget_Planner.xlsx     Cover: cover_budget2027.png
+Tags: budget planner, 2027 planner, budget spreadsheet, yearly budget, google sheets budget
+
+Description:
+Plan your whole 2027 in one spreadsheet. Set your categories and monthly budget once, then track each month on its own tab — January to December.
+
+What's inside:
+• Setup tab: your income and up to 20 spending categories
+• 12 monthly tabs: budget vs actual, difference turns red when you overspend, % used per category
+• Year Overview: income, spending and savings for every month, your savings rate, and a full-year total per category
+
+Works in Excel, Google Sheets and Numbers. Instant download (.xlsx). Example numbers included so you can see how it works.
+
+════════════════════════════════════════════
+2) Christmas & Holiday Budget Planner
+Price: $4.99
+File: Christmas_Holiday_Budget_Planner.xlsx     Cover: cover_christmas.png
+Tags: christmas budget, holiday budget planner, gift list, christmas planner, budget spreadsheet
+
+Description:
+Enjoy the holidays without the January money shock. Set one total budget and track every gift, meal and decoration against it.
+
+What's inside:
+• Gift list: person, gift idea, budget, spent, bought? and wrapped? checkboxes
+• Holiday expenses: food, decor, travel, cards, events
+• Summary: what you planned, what you spent, what's left, and how many gifts are bought and wrapped
+
+Reuse it every year. Works in Excel, Google Sheets and Numbers. Instant download (.xlsx).
+
+════════════════════════════════════════════
+3) Paycheck to Paycheck Budget Planner
+Price: $4.99
+File: Paycheck_Budget_Planner.xlsx     Cover: cover_paycheck.png
+Tags: paycheck budget, paycheck to paycheck, bill tracker, budget spreadsheet, biweekly budget
+
+Description:
+Budget the way you actually get paid. Assign every bill to the paycheck that covers it and see exactly what's left from each one.
+
+What's inside:
+• Up to 5 paychecks a month (weekly, bi-weekly or monthly pay)
+• Bill list with due day, amount and a "paid from" dropdown
+• Per-paycheck summary: income, bills, left over and still to pay — turns red if a paycheck can't cover its bills
+• Mark bills as paid and the row turns green
+
+Works in Excel, Google Sheets and Numbers. Instant download (.xlsx).
+
+════════════════════════════════════════════
+4) Freelancer Income & Invoice Tracker
+Price: $6.99
+File: Freelancer_Income_Invoice_Tracker.xlsx     Cover: cover_freelancer.png
+Tags: freelancer invoice tracker, income tracker, small business, self employed, invoice spreadsheet
+
+Description:
+Know who owes you, what you really earned, and how much to put aside for tax.
+
+What's inside:
+• Invoice log: due dates calculated from your payment terms, OVERDUE alert in red
+• Expense log with categories
+• Dashboard by month: income received, expenses, profit, tax set-aside (you pick the %) and what you keep
+• Total still owed by clients and average days to get paid
+
+Works in Excel, Google Sheets and Numbers. Instant download (.xlsx). A planning tool, not tax advice.
+
+════════════════════════════════════════════
+5) Wedding Budget Planner
+Price: $6.99
+File: Wedding_Budget_Planner.xlsx     Cover: cover_wedding.png
+Tags: wedding budget, wedding planner, wedding spreadsheet, guest list, wedding checklist
+
+Description:
+Plan the wedding without the money stress. Split your total budget, compare quotes, and never miss a vendor payment.
+
+What's inside:
+• Budget: 15 categories with a suggested % split, planned vs quoted, paid so far and still due, cost per guest
+• Vendors & payments: deposits and balances with due dates
+• Guest list: side, RSVP and meal choice, with automatic counts
+
+Works in Excel, Google Sheets and Numbers. Instant download (.xlsx).
+
+════════════════════════════════════════════
+6) Complete Budget & Planner Bundle — 14 Spreadsheets
+Price: $19.99
+File: Complete_Planner_Bundle.zip     Cover: cover_bundle.png
+Tags: budget bundle, planner bundle, budget spreadsheet, finance templates, google sheets templates
+
+Description:
+Every ClarityPaperCo spreadsheet in one download — over 70% less than buying them one by one.
+
+Included (14):
+• 2027 Budget Planner
+• 50/30/20 Monthly Budget Planner
+• Paycheck to Paycheck Budget Planner
+• Debt Snowball & Avalanche Tracker
+• Savings & Sinking Funds Tracker
+• Net Worth Tracker
+• Subscription & Bill Tracker
+• Christmas & Holiday Budget Planner
+• Wedding Budget Planner
+• Freelancer Income & Invoice Tracker
+• Small Business Bookkeeping
+• Meta Ads Campaign Tracker
+• Monthly Habit Tracker
+• Weekly Meal Planner
+
+All work in Excel, Google Sheets and Numbers. Instant download (.zip).
+
+
+════════════════════════════════════════════
+PINTEREST — 12 pins جداد (للـ task تاع clarity)
+Link لكل pin: الرابط تاع المنتج في Gumroad (مثلاً https://claritydigital8.gumroad.com/l/xxxx)
+
+pin_budget2027_a.jpg / _b.jpg  → board: Budget Planner Spreadsheets & Finance Templates
+  Title A: 2027 Budget Planner Spreadsheet – Monthly & Yearly Budget Template (Excel, Google Sheets)
+  Title B: Plan Your 2027 Budget: 12-Month Budget Planner with Savings Tracker
+  Desc: Start 2027 with a plan. 12 monthly budget tabs, budget vs actual and a year overview with your savings rate. Works in Google Sheets and Excel. #budgetplanner #2027planner #budgeting #moneytips #googlesheets
+
+pin_christmas_a.jpg / _b.jpg  → board: Budget Planner Spreadsheets & Finance Templates
+  Title A: Christmas Budget Planner Spreadsheet – Gift List & Holiday Budget Template
+  Title B: How to Budget for Christmas Without Overspending (Free Your January)
+  Desc: Track every gift, meal and decoration against one holiday budget. Gift list with bought and wrapped checkboxes. Google Sheets & Excel. #christmasbudget #giftlist #holidayplanner #budgeting #christmas2026
+
+pin_paycheck_a.jpg / _b.jpg  → board: Budget Planner Spreadsheets & Finance Templates
+  Title A: Paycheck to Paycheck Budget Spreadsheet – Biweekly Budget Template
+  Title B: Budget by Paycheck: Assign Every Bill to the Right Payday
+  Desc: See exactly which paycheck pays each bill and what's left over. Weekly, biweekly or monthly pay. Google Sheets & Excel. #paycheckbudget #biweeklybudget #billtracker #budgeting #moneysaving
+
+pin_freelancer_a.jpg / _b.jpg  → board: Small Business Bookkeeping
+  Title A: Freelancer Invoice Tracker Spreadsheet – Income, Expenses & Tax Set-Aside
+  Title B: Freelancers: Know Who Owes You & What to Save for Tax
+  Desc: Invoice log with overdue alerts, monthly profit and tax set-aside for self-employed and freelancers. Google Sheets & Excel. #freelancer #invoicetracker #selfemployed #smallbusiness #bookkeeping
+
+pin_wedding_a.jpg / _b.jpg  → board: Savings Tracker Templates
+  Title A: Wedding Budget Spreadsheet – Wedding Planner with Guest List & Vendor Tracker
+  Title B: Plan Your Wedding Budget Without the Stress (Spreadsheet Template)
+  Desc: Split your wedding budget by category, track vendor deposits and due dates, and manage RSVPs and meals. Google Sheets & Excel. #weddingbudget #weddingplanning #weddingplanner #guestlist #bridetobe
+
+pin_bundle_a.jpg / _b.jpg  → board: Budget Planner Spreadsheets & Finance Templates
+  Title A: Budget Planner Bundle – 14 Finance Spreadsheet Templates (Google Sheets, Excel)
+  Title B: Every Budget Spreadsheet You Need in One Bundle
+  Desc: 14 spreadsheets: 2027 budget, paycheck budget, debt payoff, savings, net worth, bills, wedding, Christmas and more. #budgetbundle #budgetplanner #financetemplates #googlesheets #personalfinance
