@@ -40,7 +40,7 @@ def page(title, desc, body, depth=0, path="", schema=None, og="article"):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{up}style.css">{ld}{gsv}</head><body>
 <header class="site"><div class="wrap"><a class="logo" href="{up}index.html"><span class="m">CP</span>ClarityPaperCo</a>
-<nav><a href="{up}index.html#guides">Guides</a><a href="{up}index.html#calculators">Calculators</a><a href="{up}budgets/index.html">By income</a><a href="{STORE}">Templates</a></nav></div></header>
+<nav><a href="{up}index.html#guides">Guides</a><a href="{up}index.html#calculators">Calculators</a><a href="{up}budgets/index.html">By income</a><a href="{STORE}">Templates</a><a href="{up}fr/index.html" hreflang="fr">FR</a></nav></div></header>
 <main><div class="wrap">{body}</div></main>
 <footer><div class="wrap">© {TODAY.year} ClarityPaperCo — simple money spreadsheets for real life. Guides are for general information, not financial advice.</div></footer>
 </body></html>"""
@@ -277,6 +277,17 @@ def main():
     open(os.path.join(OUT, "index.html"), "w", encoding="utf-8").write(
         page("ClarityPaperCo — Budget Guides & Free Money Calculators", "Plain-English budgeting guides, free paycheck, 50/30/20 and debt payoff calculators, and simple spreadsheet templates for Excel and Google Sheets.", body, 0, "", og="website"))
 
+    fr_note = ""
+    try:
+        import sys
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import build_fr
+        fr_urls, fr_live, fr_total = build_fr.build(OUT, SRC, TODAY)
+        urls.extend(fr_urls)
+        fr_note = f", fr {fr_live}/{fr_total} pages"
+    except Exception as e:  # never let the French section break the English site
+        print("French section skipped:", repr(e))
+
     seen, sm = set(), []
     for u, d in urls:
         if u not in seen:
@@ -284,7 +295,7 @@ def main():
             sm.append(f"<url><loc>{BASE}/{u}</loc><lastmod>{d}</lastmod></url>")
     open(os.path.join(OUT, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(sm) + "</urlset>\n")
     open(os.path.join(OUT, ".nojekyll"), "w").write("")
-    print(f"built: {len(arts)} articles, {len(live)}/{total} budget pages, {len(calcs)} calculators, {len(sm)} urls")
+    print(f"built: {len(arts)} articles, {len(live)}/{total} budget pages, {len(calcs)} calculators, {len(sm)} urls{fr_note}")
 
 
 if __name__ == "__main__":
