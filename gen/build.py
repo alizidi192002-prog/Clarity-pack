@@ -18,6 +18,8 @@ G = "https://claritydigital8.gumroad.com/l/"
 STORE = "https://claritydigital8.gumroad.com/"
 GSV = '<meta name="google-site-verification" content="3QsNRygAzDRQhArNOHVWrSI-IxsKXUPM9EzUp-nBTPM" />'
 TODAY = datetime.date.fromisoformat(os.environ["FAKE_TODAY"]) if os.environ.get("FAKE_TODAY") else datetime.datetime.utcnow().date()
+FREE_PDF = G + "ouvayi"       # free monthly budget worksheet (0+)
+PRINT_PDF = G + "dvflcyl"     # 2027 printable planner
 RELEASE_START = datetime.date(2026, 10, 1)
 RELEASE_FIRST = 6      # pages live on day one
 RELEASE_PER_DAY = 2    # extra pages each day after
@@ -40,7 +42,7 @@ def page(title, desc, body, depth=0, path="", schema=None, og="article"):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{up}style.css">{ld}{gsv}</head><body>
 <header class="site"><div class="wrap"><a class="logo" href="{up}index.html"><span class="m">CP</span>ClarityPaperCo</a>
-<nav><a href="{up}index.html#guides">Guides</a><a href="{up}index.html#calculators">Calculators</a><a href="{up}budgets/index.html">By income</a><a href="{STORE}">Templates</a><a href="{up}fr/index.html" hreflang="fr">FR</a></nav></div></header>
+<nav><a href="{up}index.html#guides">Guides</a><a href="{up}index.html#calculators">Calculators</a><a href="{up}budgets/index.html">By income</a><a href="{up}free-printable-budget-worksheet.html">Free PDF</a><a href="{STORE}">Templates</a><a href="{up}fr/index.html" hreflang="fr">FR</a></nav></div></header>
 <main><div class="wrap">{body}</div></main>
 <footer><div class="wrap">© {TODAY.year} ClarityPaperCo — simple money spreadsheets for real life. Guides are for general information, not financial advice.</div></footer>
 </body></html>"""
@@ -228,6 +230,20 @@ def card(href, k, t, p):
     return f'<a class="card" href="{href}"><div class="k">{html.escape(k)}</div><h3>{html.escape(t)}</h3><p>{html.escape(p)}</p></a>'
 
 
+def free_page():
+    body = f"""<h1>Free Printable Monthly Budget Worksheet</h1>
+<p class="lede">A simple one-page budget you can print and fill in by hand in about 10 minutes, plus an expense log to track the month. Free PDF, US Letter.</p>
+<div class="cta"><div><strong>Download the free worksheet</strong>Enter 0 at checkout on Gumroad and the PDF is yours. No spam, no subscription.</div><a class="btn" href="{FREE_PDF}">Get it free</a></div>
+<h2>What's on the worksheet</h2>
+<ul><li>Income: every source for the month and a total</li><li>Bills: due date, amount and a paid checkbox for each one</li><li>Spending: ten everyday categories with budget vs actual</li><li>Savings goals: planned vs actually saved</li><li>Month summary: income, bills, spending, savings and what's left over</li><li>Page 2: an expense log for every purchase</li></ul>
+<h2>How to use it</h2>
+<p>At the start of the month, write your expected income, then give every dollar a job: bills first, then savings, then everyday spending. Income minus everything you planned should be zero or more. During the month, tick bills as you pay them and once a week write what you really spent next to the plan. At month end, fill in the summary and adjust next month.</p>
+<div class="box"><strong>Tip:</strong> use a pencil for the plan and a pen for what actually happened, so you can see the difference at a glance.</div>
+<p>Prefer a spreadsheet? Try the free <a href="calculators/50-30-20-calculator.html">50/30/20 calculator</a> or read <a href="articles/how-to-make-a-budget-for-2027.html">how to make a budget for 2027</a>.</p>
+{cta("Want the whole year on paper?", "The 2027 Budget Planner printable: 20 pages with 12 monthly budgets and mini calendars, bill tracker, savings tracker with 100 boxes and a debt payoff tracker.", PRINT_PDF, "Get the planner — €4.99")}"""
+    return "free-printable-budget-worksheet.html", "Free Printable Monthly Budget Worksheet (PDF)", "Download a free printable monthly budget worksheet: income, bills with checkboxes, spending budget vs actual, savings and an expense log. PDF, US Letter.", body
+
+
 def main():
     if os.path.exists(OUT):
         shutil.rmtree(OUT)
@@ -247,6 +263,9 @@ def main():
         p, t, d, b = fn()
         write(p, page(t + " | ClarityPaperCo", d, b, 1, p, {"@context": "https://schema.org", "@type": "WebApplication", "name": t, "applicationCategory": "FinanceApplication", "offers": {"@type": "Offer", "price": "0"}}, "website"))
         calcs.append((p, t.replace(" (Free)", ""), d.split(":")[1].strip().capitalize() if ":" in d else d))
+
+    fp, ft, fd, fb = free_page()
+    write(fp, page(ft + " | ClarityPaperCo", fd, fb, 0, fp))
 
     # programmatic pages
     live, total = programmatic()
@@ -271,6 +290,7 @@ def main():
     body = f"""<h1>Simple money guides and free budget calculators</h1>
 <p class="lede">Plain-English guides for budgeting a paycheck, planning the holidays and paying for big life events — with free calculators and ready-made spreadsheets.</p>
 <h2 id="calculators">Free calculators</h2><div class="grid">{calc_cards}</div>
+<h2 id="printables">Printables</h2><div class="grid">{card("free-printable-budget-worksheet.html", "Free", "Free Monthly Budget Worksheet", "One page to plan your month by hand, plus an expense log. Printable PDF.")}{card(PRINT_PDF, "Printable — €4.99", "2027 Budget Planner (PDF)", "20 printable pages: 12 monthly budgets, bill tracker, savings and debt trackers.")}</div>
 <h2 id="guides">Guides</h2><div class="grid">{guides}</div>
 <h2 id="budgets">Budgets by income</h2><p><a href="budgets/index.html">See {sum(len(v) for v in groups.values())} worked examples</a> — 50/30/20 budgets by monthly income, wedding budgets and Christmas budgets.</p>
 {cta("Every spreadsheet in one download", "14 templates: 2027 budget, paycheck budget, debt payoff, savings, net worth, bills, Christmas, wedding, freelancer invoices and more. Excel & Google Sheets.", G + "zpdnkk", "Get it — €19.99", alt=False)}"""
