@@ -19,7 +19,7 @@ def links():
         d = json.load(open(os.path.join(HERE, "fr_links.json"), encoding="utf-8"))
     except Exception:
         d = {}
-    return {k: (d.get(k) or STORE) for k in ("budget2027", "noel", "mariage", "autoentrepreneur", "pack")}
+    return {k: (d.get(k) or STORE) for k in ("budget2027", "noel", "mariage", "autoentrepreneur", "pack", "fiche", "planner_pdf")}
 
 
 def eur(v):
@@ -40,7 +40,7 @@ def page(title, desc, body, depth, path, today, schema=None, og="article"):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{up}style.css">{ld}</head><body>
 <header class="site"><div class="wrap"><a class="logo" href="{fr_root}index.html"><span class="m">CP</span>ClarityPaperCo</a>
-<nav><a href="{fr_root}index.html#guides">Guides</a><a href="{fr_root}index.html#simulateurs">Simulateurs</a><a href="{fr_root}budgets/index.html">Par revenu</a><a href="{fr_root}index.html#tableurs">Tableurs</a></nav></div></header>
+<nav><a href="{fr_root}index.html#guides">Guides</a><a href="{fr_root}index.html#simulateurs">Simulateurs</a><a href="{fr_root}budgets/index.html">Par revenu</a><a href="{fr_root}fiche-budget-gratuite.html">Gratuit</a><a href="{fr_root}index.html#tableurs">Tableurs</a></nav></div></header>
 <main><div class="wrap">{body}</div></main>
 <footer><div class="wrap">© {today.year} ClarityPaperCo — des tableurs simples pour gérer son argent. Contenu à titre informatif, ne constitue pas un conseil financier. · <a href="{up}index.html">English</a></div></footer>
 </body></html>"""
@@ -193,6 +193,20 @@ const r_=document.getElementById('r');document.querySelectorAll('input').forEach
     return "fr/simulateurs/objectif-epargne.html", "Simulateur d'objectif d'épargne (gratuit)", "Calculez combien épargner chaque mois pour atteindre un objectif à une date donnée, avec ou sans intérêts.", body
 
 
+def free_page(L):
+    body = f"""<h1>Fiche budget mensuel gratuite à imprimer</h1>
+<p class="lede">Un budget simple sur une page, à remplir à la main en 10 minutes environ, et un journal pour suivre vos dépenses du mois. PDF gratuit, format A4.</p>
+<div class="cta"><div><strong>Télécharger la fiche gratuite</strong>Saisissez 0 au moment de payer sur Gumroad et le PDF est à vous. Sans abonnement.</div><a class="btn" href="{L["fiche"]}">La recevoir gratuitement</a></div>
+<h2>Ce que contient la fiche</h2>
+<ul><li>Revenus : chaque source du mois et le total</li><li>Factures : date, montant et case « payé » pour chacune</li><li>Dépenses courantes : dix postes avec prévu et réel</li><li>Épargne : objectif prévu et réellement épargné</li><li>Bilan du mois : revenus, factures, dépenses, épargne et reste</li><li>Page 2 : journal des dépenses</li></ul>
+<h2>Comment l'utiliser</h2>
+<p>En début de mois, notez vos revenus prévus, puis attribuez chaque euro : d'abord les factures, puis l'épargne, puis les dépenses courantes. Revenus moins tout le prévu doit être positif ou nul. Pendant le mois, cochez les factures payées et, une fois par semaine, notez vos dépenses réelles à côté du prévu. En fin de mois, remplissez le bilan et ajustez le mois suivant.</p>
+<div class="box"><strong>Astuce :</strong> crayon pour le prévu, stylo pour le réel : vous voyez l'écart d'un coup d'œil.</div>
+<p>Vous préférez l'écran ? Essayez le <a href="simulateurs/budget-50-30-20.html">simulateur 50/30/20</a> ou lisez <a href="articles/comment-faire-un-budget-mensuel.html">comment faire un budget mensuel</a>.</p>
+{cta("Toute l'année sur papier ?", "Le Planner Budget 2027 à imprimer : 20 pages A4 avec 12 budgets mensuels et mini-calendriers, suivi des factures, suivi d'épargne en 100 cases et suivi des dettes.", L["planner_pdf"], f"Voir le planner — 4,99{NB}€")}"""
+    return "fr/fiche-budget-gratuite.html", "Fiche budget mensuel gratuite à imprimer (PDF)", "Téléchargez une fiche budget mensuel gratuite à imprimer : revenus, factures à cocher, dépenses prévu vs réel, épargne et journal des dépenses. PDF A4.", body
+
+
 def card(href, k, t, p):
     return f'<a class="card" href="{href}"><div class="k">{html.escape(k)}</div><h3>{html.escape(t)}</h3><p>{html.escape(p)}</p></a>'
 
@@ -230,6 +244,9 @@ def build(out, src, today):
         write(p, page(t + " | ClarityPaperCo", d, b, 2, p, today, {"@context": "https://schema.org", "@type": "WebApplication", "name": t, "inLanguage": "fr", "applicationCategory": "FinanceApplication", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}, "website"))
         sims.append((p[3:], t.replace(" (gratuit)", ""), d.split(":")[0] if ":" in d else d))
 
+    fp, ft, fd, fb = free_page(L)
+    write(fp, page(ft + " | ClarityPaperCo", fd, fb, 1, fp, today))
+
     live, total = programmatic(L, today)
     groups = {"Budget selon votre salaire": [], "Budgets mariage": [], "Budgets de Noël": []}
     for p, t, d, b in live:
@@ -256,6 +273,7 @@ def build(out, src, today):
     body = f"""<h1>Gérer son budget simplement, en euros</h1>
 <p class="lede">Des simulateurs gratuits, des exemples de budgets chiffrés et des tableurs prêts à l'emploi pour gérer votre salaire, préparer Noël ou organiser un mariage.</p>
 <h2 id="simulateurs">Simulateurs gratuits</h2><div class="grid">{"".join(card(p, "Simulateur", t, d) for p, t, d in sims)}</div>
+<h2 id="imprimer">À imprimer</h2><div class="grid">{card("fiche-budget-gratuite.html", "Gratuit", "Fiche budget mensuel gratuite", "Une page pour préparer votre mois à la main, et un journal des dépenses. PDF A4.")}{card(L["planner_pdf"], f"À imprimer — 4,99{NB}€", "Planner Budget 2027 (PDF)", "20 pages A4 : 12 budgets mensuels, suivi des factures, de l'épargne et des dettes.")}</div>
 <h2 id="exemples">Exemples de budgets</h2><p><a href="budgets/index.html">Voir les {n_ex} exemples</a> — budget selon votre salaire (méthode 50/30/20), budgets mariage et budgets de Noël.</p>
 {guides_html}
 <h2 id="tableurs">Tableurs en français</h2><div class="grid">{"".join(card(u, k, t, p) for k, t, p, u in prods)}</div>
