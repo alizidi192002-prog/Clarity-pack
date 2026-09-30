@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alizidi192002-prog.github.io/Clarity-pack/sitemap.xml
