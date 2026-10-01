@@ -14,6 +14,7 @@ CALCS = {  # calculator page -> (embed name, iframe height)
     "calculators/hourly-to-salary-calculator.html": ("hourly-to-salary", 800),
     "calculators/debt-snowball-avalanche-calculator.html": ("debt-payoff", 1050),
     "calculators/paycheck-budget-calculator.html": ("paycheck-budget", 1500),
+    "calculators/christmas-gift-budget-calculator.html": ("christmas-gift-budget", 1150),
 }
 
 
