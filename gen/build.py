@@ -281,6 +281,19 @@ def main():
             hub += f'<h2>{g}</h2><ul>' + "".join(f'<li><a href="../{p}">{html.escape(t)}</a></li>' for p, t in items) + "</ul>"
     write("budgets/index.html", page("Budgets by Income and Occasion | ClarityPaperCo", "Worked budget examples: 50/30/20 budgets from $2,000 to $8,000 a month, wedding budgets and Christmas budgets with real numbers.", hub, 1, "budgets/index.html", og="website"))
 
+    # extensions: every gen/ext_*.py with build(B) adds pages and a home-page section
+    import sys, types, importlib
+    here = os.path.dirname(os.path.abspath(__file__))
+    sys.path.insert(0, here)
+    B = types.SimpleNamespace(page=page, cta=cta, table=table, card=card, money=money, write=write, TODAY=TODAY, G=G, STORE=STORE)
+    extra = ""
+    for fn in sorted(os.listdir(here)):
+        if fn.startswith("ext_") and fn.endswith(".py"):
+            try:
+                extra += importlib.import_module(fn[:-3]).build(B) or ""
+            except Exception as e:  # an extension must never break the site
+                print("extension skipped:", fn, repr(e))
+
     # articles
     arts = read_articles()
     for a in arts:
@@ -291,6 +304,7 @@ def main():
 <p class="lede">Plain-English guides for budgeting a paycheck, planning the holidays and paying for big life events — with free calculators and ready-made spreadsheets.</p>
 <h2 id="calculators">Free calculators</h2><div class="grid">{calc_cards}</div>
 <h2 id="printables">Printables</h2><div class="grid">{card("free-printable-budget-worksheet.html", "Free", "Free Monthly Budget Worksheet", "One page to plan your month by hand, plus an expense log. Printable PDF.")}{card(PRINT_PDF, "Printable — €4.99", "2027 Budget Planner (PDF)", "20 printable pages: 12 monthly budgets, bill tracker, savings and debt trackers.")}</div>
+{extra}
 <h2 id="guides">Guides</h2><div class="grid">{guides}</div>
 <h2 id="budgets">Budgets by income</h2><p><a href="budgets/index.html">See {sum(len(v) for v in groups.values())} worked examples</a> — 50/30/20 budgets by monthly income, wedding budgets and Christmas budgets.</p>
 {cta("Every spreadsheet in one download", "14 templates: 2027 budget, paycheck budget, debt payoff, savings, net worth, bills, Christmas, wedding, freelancer invoices and more. Excel & Google Sheets.", G + "zpdnkk", "Get it — €19.99", alt=False)}"""
