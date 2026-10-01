@@ -44,12 +44,29 @@ def topic(path):
     return "bundle"
 
 
+FEEDS = {  # file -> topics; everything not listed goes to pins.xml
+    "pins-debt.xml": {"debt"},
+    "pins-wedding.xml": {"wedding"},
+    "pins-christmas.xml": {"christmas"},
+    "pins-paycheck.xml": {"paycheck"},
+}
+NAMES = {"pins.xml": "budget guides and calculators", "pins-debt.xml": "debt payoff", "pins-wedding.xml": "wedding budget",
+         "pins-christmas.xml": "Christmas and holiday budget", "pins-paycheck.xml": "paycheck and hourly wages"}
+
+
+def feed_for(tp):
+    for f, tps in FEEDS.items():
+        if tp in tps:
+            return f
+    return "pins.xml"
+
+
 def _write_feed():
     try:
         sm = open(os.path.join(OUT, "sitemap.xml"), encoding="utf-8").read()
         locs = [u for u in re.findall(r"<loc>(.*?)</loc>", sm) if "/fr/" not in u and "/es/" not in u and not u.endswith("index.html") and u.rstrip("/") != BASE]
         now = datetime.datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S +0000")
-        items = []
+        items = {f: [] for f in NAMES}
         for u in locs:
             rel = u[len(BASE) + 1:]
             f = os.path.join(OUT, rel)
@@ -64,15 +81,16 @@ def _write_feed():
             imgs = IMAGES[tp]
             img = IMG + imgs[zlib.crc32(rel.encode()) % len(imgs)]
             desc = f"{desc} {TAGS.get(tp, TAGS['bundle'])}"
-            items.append(f"<item><title>{html.escape(title[:100])}</title><link>{u}</link><description>{html.escape(desc[:480])}</description>"
+            items[feed_for(tp)].append(f"<item><title>{html.escape(title[:100])}</title><link>{u}</link><description>{html.escape(desc[:480])}</description>"
                          f'<guid isPermaLink="true">{u}</guid><pubDate>{now}</pubDate>'
                          f'<enclosure url="{img}" type="image/jpeg" length="0"/><media:content url="{img}" medium="image" type="image/jpeg"/></item>')
-        feed = ('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel>'
-                f"<title>ClarityPaperCo — budget guides and calculators</title><link>{BASE}/</link>"
-                "<description>Budget guides, free calculators and worked budget examples.</description>"
-                + "".join(items) + "</channel></rss>\n")
-        open(os.path.join(OUT, "pins.xml"), "w", encoding="utf-8").write(feed)
-        print("pins.xml:", len(items), "items")
+        for f, its in items.items():
+            feed = ('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel>'
+                    f"<title>ClarityPaperCo — {NAMES[f]}</title><link>{BASE}/</link>"
+                    "<description>Budget guides, free calculators and worked budget examples.</description>"
+                    + "".join(its) + "</channel></rss>\n")
+            open(os.path.join(OUT, f), "w", encoding="utf-8").write(feed)
+            print(f, len(its), "items")
     except Exception as e:
         print("pins.xml skipped:", repr(e))
 
