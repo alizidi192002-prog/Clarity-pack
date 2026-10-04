@@ -12,14 +12,18 @@ OUT = os.path.join(ROOT, "_site")
 BASE = "https://alizidi192002-prog.github.io/Clarity-pack"
 GREEN, INK, MUTED, GOLD, PAPER, GROUND, RULE = (47, 111, 82), (28, 38, 32), (90, 102, 95), (184, 128, 50), (255, 255, 255), (238, 240, 235), (220, 224, 218)
 LANG = {
+    "en": {"kick": [("wedding", "WEDDING BUDGET"), ("christmas", "CHRISTMAS BUDGET"), ("black-friday", "BLACK FRIDAY"), ("wages/", "HOURLY PAY"),
+                    ("hourly", "FREE CALCULATOR"), ("calculator", "FREE CALCULATOR"), ("debt", "DEBT PAYOFF"), ("free-printable", "FREE PRINTABLE"),
+                    ("paycheck", "PAYCHECK BUDGET"), ("50-30-20", "50/30/20 BUDGET"), ("", "BUDGETING")],
+           "foot": "Free guide · ClarityPaperCo", "site": "ClarityPaperCo", "tags": ""},
     "fr": {"kick": [("mariage", "MARIAGE"), ("noel", "NOËL"), ("auto-entrepreneur", "AUTO-ENTREPRENEUR"), ("epargne", "ÉPARGNE"),
                     ("simulateur", "SIMULATEUR GRATUIT"), ("fiche", "FICHE GRATUITE"), ("budgets/", "BUDGET MENSUEL"), ("", "BUDGET")],
            "foot": "Gratuit · en français", "site": "ClarityPaperCo",
-           "tags": "#budget #budgetfamilial #economiser #gestionbudget #finances"},
+           "tags": "Budget familial, gérer son budget, économiser de l'argent, méthode 50/30/20, tableau de budget mensuel."},
     "es": {"kick": [("boda", "BODA"), ("navidad", "NAVIDAD"), ("autonomo", "AUTÓNOMOS"), ("ahorro", "AHORRO"),
                     ("simulador", "SIMULADOR GRATIS"), ("presupuestos/", "PRESUPUESTO MENSUAL"), ("", "PRESUPUESTO")],
            "foot": "Gratis · en español", "site": "ClarityPaperCo",
-           "tags": "#presupuesto #ahorro #finanzaspersonales #ahorrardinero #economia"},
+           "tags": "Presupuesto familiar, ahorrar dinero, finanzas personales, regla 50/30/20, plantilla de presupuesto mensual."},
 }
 FONTS = {
     "serif": ["/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf", "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf"],
@@ -46,9 +50,9 @@ def _font(ImageFont, kind, size):
 
 
 def _wrap(d, text, font, width):
-    nb = chr(160)
-    text = re.sub(r"(\d)[   ](?=\d{3}\b)", "\\1" + nb, text)
-    text = re.sub(r"[  ](?=[€:?!;%])", nb, text)
+    nb, nn = chr(160), chr(0x202f)
+    text = re.sub("(\\d)[ " + nb + nn + "](?=\\d{3}\\b)", "\\1" + nb, text)
+    text = re.sub("[ " + nn + "](?=[€:?!;%])", nb, text)
     lines, cur = [], ""
     for w in text.split(" "):
         t = (cur + " " + w).strip()
@@ -110,12 +114,57 @@ def make_pin(PIL, path, kicker, title, sub, bullets, foot):
     im.save(path, "JPEG", quality=88, optimize=True)
 
 
+def page_image(PIL, lg, rel, s):
+    """Draw the pin image for one built page and return its path relative to _site."""
+    cfg = LANG[lg]
+    t = re.search(r"<title>(.*?)</title>", s, re.S)
+    dm = re.search(r'<meta name="description" content="(.*?)"', s, re.S)
+    h1 = re.search(r"<h1[^>]*>(.*?)</h1>", s, re.S)
+    title = _clean(h1.group(1)) if h1 else (_clean(t.group(1)).split(" | ")[0] if t else rel)
+    desc = _clean(dm.group(1)) if dm else title
+    sub = re.split(r"(?<=[.!?])\s", desc)[0]
+    bullets = [_clean(x) for x in re.findall(r"<h2[^>]*>(.*?)</h2>", s, re.S)]
+    kicker = next(k for key, k in cfg["kick"] if key in rel)
+    img_rel = "pins/img/" + rel.replace("/", "-").replace(".html", "") + ".jpg"
+    make_pin(PIL, os.path.join(OUT, img_rel), kicker, title, sub, bullets, cfg["foot"])
+    return img_rel
+
+
+def add_og_images():
+    """Give every page that has a pin image an og:image tag (Pinterest rich pins, link previews)."""
+    n = 0
+    d = os.path.join(OUT, "pins", "img")
+    if not os.path.isdir(d):
+        return 0
+    have = set(os.listdir(d))
+    for root, _, files in os.walk(OUT):
+        for fn in files:
+            if not fn.endswith(".html"):
+                continue
+            f = os.path.join(root, fn)
+            rel = os.path.relpath(f, OUT).replace(os.sep, "/")
+            img = rel.replace("/", "-").replace(".html", "") + ".jpg"
+            if img not in have:
+                continue
+            s = open(f, encoding="utf-8").read()
+            if 'property="og:image"' in s or "</head>" not in s:
+                continue
+            tag = (f'<meta property="og:image" content="{BASE}/pins/img/{img}"><meta property="og:image:width" content="1000">'
+                   f'<meta property="og:image:height" content="1500"><meta property="og:site_name" content="ClarityPaperCo">'
+                   f'<meta name="twitter:card" content="summary_large_image">')
+            open(f, "w", encoding="utf-8").write(s.replace("</head>", tag + "</head>", 1))
+            n += 1
+    return n
+
+
 def _write():
     try:
         PIL = _pil()
         sm = open(os.path.join(OUT, "sitemap.xml"), encoding="utf-8").read()
         now = datetime.datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S +0000")
         for lg, cfg in LANG.items():
+            if lg == "en":
+                continue  # the English feeds are written by ext_rss, which calls page_image itself
             items = []
             for u in re.findall(r"<loc>(.*?)</loc>", sm):
                 rel = u[len(BASE) + 1:]
@@ -127,17 +176,10 @@ def _write():
                 s = open(f, encoding="utf-8").read()
                 t = re.search(r"<title>(.*?)</title>", s, re.S)
                 dm = re.search(r'<meta name="description" content="(.*?)"', s, re.S)
-                h1 = re.search(r"<h1[^>]*>(.*?)</h1>", s, re.S)
-                title = _clean(h1.group(1)) if h1 else (_clean(t.group(1)).split(" | ")[0] if t else rel)
-                desc = _clean(dm.group(1)) if dm else title
-                sub = re.split(r"(?<=[.!?])\s", desc)[0]
-                bullets = [_clean(x) for x in re.findall(r"<h2[^>]*>(.*?)</h2>", s, re.S)]
-                kicker = next(k for key, k in cfg["kick"] if key in rel)
-                slug = rel.replace("/", "-").replace(".html", "")
-                img_rel = f"pins/img/{slug}.jpg"
-                make_pin(PIL, os.path.join(OUT, img_rel), kicker, title, sub, bullets, cfg["foot"])
+                desc = _clean(dm.group(1)) if dm else rel
+                img_rel = page_image(PIL, lg, rel, s)
                 img = f"{BASE}/{img_rel}"
-                pin_title = (_clean(t.group(1)).split(" | ")[0] if t else title)[:100]
+                pin_title = (_clean(t.group(1)).split(" | ")[0] if t else rel)[:100]
                 items.append(f"<item><title>{html.escape(pin_title)}</title><link>{u}</link>"
                              f"<description>{html.escape((desc + ' ' + cfg['tags'])[:480])}</description>"
                              f'<guid isPermaLink="true">{u}</guid><pubDate>{now}</pubDate>'
@@ -147,6 +189,7 @@ def _write():
                     + "".join(items) + "</channel></rss>\n")
             open(os.path.join(OUT, f"pins-{lg}.xml"), "w", encoding="utf-8").write(feed)
             print(f"pins-{lg}.xml:", len(items), "items")
+        print("og:image added to", add_og_images(), "pages")
     except Exception as e:
         print("pins-fr/es skipped:", repr(e))
 
