@@ -31,10 +31,19 @@ RULES = [("wedding", "wedding"), ("christmas", "christmas"), ("holiday", "christ
          ("2027", "year"), ("new-year", "year"), ("year-end", "year"), ("subscription", "subscription"), ("net-worth", "networth"),
          ("meal", "meal"), ("grocer", "meal"), ("bookkeeping", "bookkeeping"), ("roas", "bookkeeping"), ("free-printable", "year"),
          ("50-30-20", "budget"), ("budget", "budget")]
-TAGS = {"wedding": "#weddingbudget #weddingplanning #budgeting", "christmas": "#christmasbudget #holidaybudget #budgeting",
-        "paycheck": "#paycheckbudget #salary #budgeting", "debt": "#debtpayoff #debtfree #budgeting", "savings": "#savingmoney #emergencyfund #budgeting",
-        "freelancer": "#freelancer #smallbusiness #invoicing", "year": "#budgetplanner #2027goals #budgeting", "bookkeeping": "#smallbusiness #bookkeeping",
-        "budget": "#budgeting #503020rule #moneytips", "bundle": "#budgetplanner #budgeting #moneytips"}
+TAGS = {"wedding": "Wedding budget breakdown, wedding budget planner, how to plan a wedding on a budget.",
+        "christmas": "Christmas budget, holiday gift budget, how much to spend on Christmas gifts, Christmas savings plan.",
+        "paycheck": "Hourly to salary, paycheck budget, biweekly budget, how much is my hourly wage per year.",
+        "debt": "Debt payoff plan, debt snowball vs avalanche, how to get out of debt, debt free journey.",
+        "savings": "How to save money, emergency fund, sinking funds, savings plan.",
+        "freelancer": "Freelancer budget, invoice tracker, irregular income budget, small business finances.",
+        "year": "Budget planner 2027, monthly budget template, yearly budget, printable budget worksheet.",
+        "bookkeeping": "Small business bookkeeping, income and expense tracker, simple bookkeeping spreadsheet.",
+        "budget": "50/30/20 budget rule, monthly budget example, how to budget your money, budgeting for beginners.",
+        "subscription": "Subscription tracker, how to cancel unused subscriptions, monthly subscription audit, save money on subscriptions.",
+        "networth": "Net worth tracker, how to calculate net worth, assets and liabilities, personal finance spreadsheet.",
+        "meal": "Grocery budget, meal planning on a budget, how much to spend on groceries, weekly meal plan.",
+        "bundle": "Budget planner, budgeting tips, personal finance spreadsheet, money management."}
 
 
 def topic(path):
@@ -61,8 +70,22 @@ def feed_for(tp):
     return "pins.xml"
 
 
+def _image_maker():
+    """Return (page_image, PIL) from ext_pins_intl, or None if images can't be drawn."""
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("ext_pins_intl", os.path.join(os.path.dirname(os.path.abspath(__file__)), "ext_pins_intl.py"))
+        m = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(m)
+        return m.page_image, m._pil()
+    except Exception as e:
+        print("pin images: using stock images,", repr(e))
+        return None
+
+
 def _write_feed():
     try:
+        maker = _image_maker()
         sm = open(os.path.join(OUT, "sitemap.xml"), encoding="utf-8").read()
         locs = [u for u in re.findall(r"<loc>(.*?)</loc>", sm) if "/fr/" not in u and "/es/" not in u and not u.endswith("index.html") and u.rstrip("/") != BASE]
         now = datetime.datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S +0000")
@@ -80,6 +103,11 @@ def _write_feed():
             tp = topic(rel)
             imgs = IMAGES[tp]
             img = IMG + imgs[zlib.crc32(rel.encode()) % len(imgs)]
+            if maker:  # one unique image per page
+                try:
+                    img = BASE + "/" + maker[0](maker[1], "en", rel, s)
+                except Exception as e:
+                    print("pin image failed for", rel, repr(e))
             desc = f"{desc} {TAGS.get(tp, TAGS['bundle'])}"
             items[feed_for(tp)].append(f"<item><title>{html.escape(title[:100])}</title><link>{u}</link><description>{html.escape(desc[:480])}</description>"
                          f'<guid isPermaLink="true">{u}</guid><pubDate>{now}</pubDate>'
