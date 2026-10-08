@@ -87,7 +87,7 @@ def _write_feed():
     try:
         maker = _image_maker()
         sm = open(os.path.join(OUT, "sitemap.xml"), encoding="utf-8").read()
-        locs = [u for u in re.findall(r"<loc>(.*?)</loc>", sm) if "/fr/" not in u and "/es/" not in u and not u.endswith("index.html") and u.rstrip("/") != BASE]
+        locs = [u for u in re.findall(r"<loc>(.*?)</loc>", sm) if "/fr/" not in u and "/es/" not in u and "/templates/" not in u and not u.endswith("index.html") and u.rstrip("/") != BASE]
         now = datetime.datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S +0000")
         items = {f: [] for f in NAMES}
         for u in locs:

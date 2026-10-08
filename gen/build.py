@@ -17,6 +17,10 @@ BASE = "https://alizidi192002-prog.github.io/Clarity-pack"
 G = "https://claritydigital8.gumroad.com/l/"
 STORE = "https://claritydigital8.gumroad.com/"
 GSV = '<meta name="google-site-verification" content="3QsNRygAzDRQhArNOHVWrSI-IxsKXUPM9EzUp-nBTPM" />'
+# Pinterest website claim: paste the content="..." value from Pinterest into gen/pinterest_verify.txt
+_PV = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pinterest_verify.txt")
+if os.path.isfile(_PV) and open(_PV).read().strip():
+    GSV += '<meta name="p:domain_verify" content="%s"/>' % open(_PV).read().strip()
 TODAY = datetime.date.fromisoformat(os.environ["FAKE_TODAY"]) if os.environ.get("FAKE_TODAY") else datetime.datetime.utcnow().date()
 FREE_PDF = G + "ouvayi"       # free monthly budget worksheet (0+)
 PRINT_PDF = G + "dvflcyl"     # 2027 printable planner
