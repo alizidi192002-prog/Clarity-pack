@@ -87,11 +87,15 @@ def item(d, slot, img, prod, title, desc):
 
 
 def write_feeds(today):
+    """Items up to tomorrow (Pinterest takes up to 24 h anyway). A feed that would still be
+    empty also gets its next upcoming item, because Pinterest refuses to connect an empty feed."""
     S = json.load(open(SCHEDULE, encoding="utf-8"))
     used = {k: 0 for k in PRODUCTS}
     items = {b: [] for b in FEEDS}
+    upcoming = {}
     oldest = today - datetime.timedelta(days=KEEP_DAYS)
-    for d, slot, img, board, pk, t, desc in plan(S, FEED_START, today):
+    horizon = today + datetime.timedelta(days=1)
+    for d, slot, img, board, pk, t, desc in plan(S, FEED_START, today + datetime.timedelta(days=30)):
         if pk is None:
             print("products feed: unknown image", img)
             continue
@@ -99,9 +103,16 @@ def write_feeds(today):
         if not t:
             t, desc = prod["titles"][used[pk] % len(prod["titles"])]
         used[pk] += 1
+        b = board if board in FEEDS else MAIN_BOARD
         if d < oldest:
             continue
-        items[board if board in FEEDS else MAIN_BOARD].insert(0, item(d, slot, img, prod, t, desc))
+        if d <= horizon:
+            items[b].insert(0, item(d, slot, img, prod, t, desc))
+        elif b not in upcoming:
+            upcoming[b] = item(d, slot, img, prod, t, desc)
+    for b in FEEDS:
+        if not items[b] and b in upcoming:
+            items[b].append(upcoming[b])
     for board, (fname, name) in FEEDS.items():
         feed = ('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel>'
                 f"<title>ClarityPaperCo — {name}</title><link>{BASE}/templates/index.html</link>"
