@@ -45,7 +45,7 @@ h1{{font:700 96px/1.02 {SERIF};margin-top:22px}}
 <div class='cat'>{p['cat']}</div><h1>{p['hook']}</h1>
 <div class='sub'>{p['name']} &middot; Excel &amp; Google Sheets</div>
 <div class='card'>{table(p,6)}</div>
-<div class='cta'>Instant download &nbsp;&rarr;&nbsp; €4.99</div>"""
+<div class='cta'>In the 14-template Bundle &nbsp;&rarr;&nbsp; €19.99</div>"""
 
 def design_b(p):  # cream checklist + stat
     checks = "".join(f"<li><span class='ck'>&#10003;</span>{c}</li>" for c in p["checks"])
@@ -69,7 +69,7 @@ li{{font:700 36px {SANS};margin-bottom:26px;display:flex;align-items:center;gap:
 <div class='stat'><div class='sl'>{p['stat_label']}</div><div class='sv'>{p['stat']}</div>
 <div class='bar'><i></i></div><div class='pl'>{p['progress_label']}</div></div>
 <ul>{checks}</ul>
-<div class='foot'><div class='pr'>€4.99</div><div class='nm'>{p['name']}<br>Excel &amp; Google Sheets</div></div>"""
+<div class='foot'><div class='pr'>€19.99</div><div class='nm'><b>Included in the Bundle</b><br>14 templates · Excel &amp; Google Sheets</div></div>"""
 
 def design_c(p):  # spreadsheet window mockup
     letters = "".join(f"<span>{l}</span>" for l in "ABCD")
@@ -93,7 +93,7 @@ h1{{font:700 88px/1.03 {SERIF};margin-top:60px}}
 <div class='top'>{brand()}<h1>{p['name']}</h1><div class='tag'>{p['hook']}</div></div>
 <div class='win'><div class='bar'><b></b><b></b><b></b><span class='fn'>{p['key'].title()} Tracker.xlsx</span></div>
 <div class='fx'>fx&nbsp;&nbsp;=SUM(B2:B7)</div><div class='cols'>{letters}</div>{table(p,6)}</div>
-<div class='band'><div class='l'>Instant download<small>Excel &amp; Google Sheets</small></div><div class='r'>€4.99</div></div>"""
+<div class='band'><div class='l'>Included in the Bundle<small>14 templates · Excel &amp; Google Sheets</small></div><div class='r'>€19.99</div></div>"""
 
 with sync_playwright() as pw:
     br = pw.chromium.launch()
