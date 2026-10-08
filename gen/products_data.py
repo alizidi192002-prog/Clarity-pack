@@ -100,7 +100,7 @@ PRODUCTS = {
    ("Side Hustle Income Tracker – Invoices, Expenses and Profit", "Track side hustle income, invoices and expenses and see your real profit each month. Excel and Google Sheets template."),
   ]),
  "debt": dict(
-  slug="debt-snowball-avalanche-tracker", name="Debt Snowball & Avalanche Tracker", price="4.99", link=STORE, priority=False,
+  slug="debt-snowball-avalanche-tracker", name="Debt Snowball & Avalanche Tracker", price="4.99", link=G + "zpdnkk", bundle_only=True, priority=False,
   images=["debt.jpg", "v2/debt_a.jpg", "v2/debt_b.jpg", "v2/debt_c.jpg"],
   blurb="Compare the debt snowball and debt avalanche methods, rank your debts automatically and see your debt-free date.",
   features=["Snowball vs avalanche side by side", "Debts ranked automatically", "Month-by-month payoff plan", "Debt-free date calculated"],
@@ -112,7 +112,7 @@ PRODUCTS = {
    ("Debt Tracker Printable & Digital – Pay Off Debt Month by Month", "A debt tracker you can print or use on your phone: balances, payments and payoff order. Debt free planner template."),
   ]),
  "budget": dict(
-  slug="50-30-20-monthly-budget-planner", name="50/30/20 Monthly Budget Planner", price="4.99", link=STORE, priority=False,
+  slug="50-30-20-monthly-budget-planner", name="50/30/20 Monthly Budget Planner", price="4.99", link=G + "zpdnkk", bundle_only=True, priority=False,
   images=["budget.jpg", "v2/budget_a.jpg", "v2/budget_b.jpg", "v2/budget_c.jpg"],
   blurb="The easiest budget you'll actually stick to: the 50/30/20 split done for you, with automatic totals and over-budget flags.",
   features=["50/30/20 split done for you", "Auto totals & over-budget flags", "12 monthly tabs + yearly view", "Beginner friendly"],
@@ -124,7 +124,7 @@ PRODUCTS = {
    ("Budget Planner Google Sheets – Monthly Budget Tracker", "A monthly budget tracker for Google Sheets and Excel with automatic totals and category flags. Instant download."),
   ]),
  "subscription": dict(
-  slug="subscription-bill-tracker", name="Subscription & Bill Tracker", price="4.99", link=STORE, priority=False,
+  slug="subscription-bill-tracker", name="Subscription & Bill Tracker", price="4.99", link=G + "zpdnkk", bundle_only=True, priority=False,
   images=["subscription.jpg", "v2/subscription_a.jpg", "v2/subscription_b.jpg", "v2/subscription_c.jpg"],
   blurb="See what your subscriptions and bills really cost per year — and find what to cancel.",
   features=["Weekly, monthly & annual bills", "Real monthly and yearly cost", "Due-date overview", "Find what to cancel"],
@@ -135,7 +135,7 @@ PRODUCTS = {
    ("Monthly Bills Tracker – How Much Do Your Subscriptions Really Cost?", "See the true monthly and yearly cost of streaming, gym, phone and more. Subscription audit spreadsheet."),
   ]),
  "habit": dict(
-  slug="monthly-habit-tracker", name="Monthly Habit Tracker", price="4.99", link=STORE, priority=False,
+  slug="monthly-habit-tracker", name="Monthly Habit Tracker", price="4.99", link=G + "zpdnkk", bundle_only=True, priority=False,
   images=["habit.jpg", "v2/habit_a.jpg", "v2/habit_b.jpg", "v2/habit_c.jpg"],
   blurb="Small habits, big results: a 31-day habit grid with automatic completion rates.",
   features=["31-day grid for any month", "Completion rates auto-calculated", "Use on phone or print", "Up to 15 habits"],
@@ -146,7 +146,7 @@ PRODUCTS = {
    ("Monthly Habit Tracker for Self-Improvement Goals", "Build better habits month by month with automatic stats. Habit tracker template for Google Sheets."),
   ]),
  "meal": dict(
-  slug="weekly-meal-planner-grocery-list", name="Weekly Meal Planner + Grocery List", price="4.99", link=STORE, priority=False,
+  slug="weekly-meal-planner-grocery-list", name="Weekly Meal Planner + Grocery List", price="4.99", link=G + "zpdnkk", bundle_only=True, priority=False,
   images=["meal.jpg", "v2/meal_a.jpg", "v2/meal_b.jpg", "v2/meal_c.jpg"],
   blurb="Plan once, shop once, save every week: a 7-day meal grid with a grocery list.",
   features=["7-day meal grid", "Grocery list with checkboxes", "Weekly food budget", "Reuse every week"],
@@ -157,7 +157,7 @@ PRODUCTS = {
    ("Grocery Budget Meal Planner – Save Money on Groceries Every Week", "Plan meals around a weekly grocery budget and shop once. Meal planner template, instant download."),
   ]),
  "savings": dict(
-  slug="savings-sinking-funds-tracker", name="Savings & Sinking Funds Tracker", price="4.99", link=STORE, priority=False,
+  slug="savings-sinking-funds-tracker", name="Savings & Sinking Funds Tracker", price="4.99", link=G + "zpdnkk", bundle_only=True, priority=False,
   images=["savings.jpg", "v2/savings_a.jpg", "v2/savings_b.jpg", "v2/savings_c.jpg"],
   blurb="Save for everything, stress-free: monthly amounts per goal, countdowns and progress bars.",
   features=["Monthly amount per goal", "Countdown to each target date", "Emergency fund ready", "Progress bars built in"],
@@ -168,7 +168,7 @@ PRODUCTS = {
    ("Savings Challenge Tracker Spreadsheet – Reach Your Money Goals", "Track savings goals with countdowns and progress bars. Savings challenge and sinking funds template."),
   ]),
  "networth": dict(
-  slug="net-worth-tracker", name="Net Worth Tracker", price="4.99", link=STORE, priority=False,
+  slug="net-worth-tracker", name="Net Worth Tracker", price="4.99", link=G + "zpdnkk", bundle_only=True, priority=False,
   images=["networth.jpg", "v2/networth_a.jpg", "v2/networth_b.jpg", "v2/networth_c.jpg"],
   blurb="Watch your wealth grow: assets vs liabilities with monthly history and a growth chart.",
   features=["Assets vs liabilities", "Monthly history auto-linked", "Growth chart included", "Milestones to aim for"],
@@ -179,7 +179,7 @@ PRODUCTS = {
    ("How to Calculate Your Net Worth – Free Your Finances Spreadsheet", "Calculate and track your net worth every month with a simple spreadsheet and growth chart."),
   ]),
  "bookkeeping": dict(
-  slug="small-business-bookkeeping", name="Small Business Bookkeeping", price="4.99", link=STORE, priority=False,
+  slug="small-business-bookkeeping", name="Small Business Bookkeeping", price="4.99", link=G + "zpdnkk", bundle_only=True, priority=False,
   images=["bookkeeping.jpg", "v2/bookkeeping_a.jpg", "v2/bookkeeping_b.jpg", "v2/bookkeeping_c.jpg"],
   blurb="Bookkeeping without the headache: income, expenses and profit in one sheet.",
   features=["Income & expense log", "Category summary, linked", "Monthly profit & loss", "No accounting app needed"],
@@ -190,7 +190,7 @@ PRODUCTS = {
    ("Simple Bookkeeping Template – No Accounting App Needed", "Simple income and expense tracker with monthly profit for small business owners."),
   ]),
  "metaads": dict(
-  slug="meta-ads-campaign-tracker", name="Meta Ads Campaign Tracker", price="4.99", link=STORE, priority=False,
+  slug="meta-ads-campaign-tracker", name="Meta Ads Campaign Tracker", price="4.99", link=G + "zpdnkk", bundle_only=True, priority=False,
   images=["metaads.jpg", "v2/metaads_a.jpg", "v2/metaads_b.jpg", "v2/metaads_c.jpg"],
   blurb="Know which ads make money: ROAS, CPA and CTR in one clean dashboard.",
   features=["ROAS, CPA & CTR auto-calculated", "Per-campaign spend log", "Facebook & Instagram ads", "Weekly performance view"],

@@ -79,7 +79,10 @@ def plan(S, start, end):
 def item(d, slot, img, prod, title, desc):
     url = f"{BASE}/templates/{prod['slug']}.html?pin={d.isoformat()}-{slot}"
     pub = datetime.datetime(d.year, d.month, d.day, 7, slot).strftime("%a, %d %b %Y %H:%M:%S +0000")
-    desc = f"{desc} {prod['name']} — €{prod['price']}, instant download."
+    if prod.get("bundle_only"):
+        desc = f"{desc} Included in the Complete Budget Bundle (14 spreadsheets) — €19.99, instant download."
+    else:
+        desc = f"{desc} {prod['name']} — €{prod['price']}, instant download."
     return (f"<item><title>{html.escape(title[:100])}</title><link>{html.escape(url)}</link>"
             f"<description>{html.escape(desc[:480])}</description><guid isPermaLink=\"true\">{html.escape(url)}</guid>"
             f"<pubDate>{pub}</pubDate><enclosure url=\"{img}\" type=\"image/jpeg\" length=\"0\"/>"
@@ -129,10 +132,12 @@ def product_page(B, k, p):
             f'<p><img src="{img}" alt="{html.escape(p["name"])} spreadsheet preview" width="500" style="width:100%;max-width:500px;height:auto;border-radius:10px"></p>'
             f"<h2>What's inside</h2><ul>{feats}</ul>"
             f'<p>Works in Excel, Google Sheets and Numbers. Instant download after purchase on Gumroad.</p>'
-            + B.cta(f'{p["name"]} — €{p["price"]}', "Secure checkout on Gumroad, instant download.", p["link"], f'Get it — €{p["price"]}', alt=(k != "bundle")))
+            + (B.cta(f'{p["name"]} is included in the Complete Bundle', "Get this spreadsheet plus 13 more (2027 budget, Christmas, wedding, paycheck, debt, savings...) in one download. Secure checkout on Gumroad.", p["link"], "Get the Bundle — €19.99", alt=False)
+               if p.get("bundle_only") else
+               B.cta(f'{p["name"]} — €{p["price"]}', "Secure checkout on Gumroad, instant download.", p["link"], f'Get it — €{p["price"]}', alt=(k != "bundle"))))
     path = f"templates/{p['slug']}.html"
     schema = {"@context": "https://schema.org", "@type": "Product", "name": p["name"], "description": p["blurb"], "image": img,
-              "offers": {"@type": "Offer", "price": p["price"], "priceCurrency": "EUR", "url": p["link"], "availability": "https://schema.org/InStock"}}
+              "offers": {"@type": "Offer", "price": "19.99" if p.get("bundle_only") else p["price"], "priceCurrency": "EUR", "url": p["link"], "availability": "https://schema.org/InStock"}}
     page = B.page(f'{p["name"]} (Excel & Google Sheets) | ClarityPaperCo', p["blurb"], body, 1, path, schema, "product")
     page = page.replace('<meta property="og:type" content="product">',
                         f'<meta property="og:type" content="product"><meta property="og:image" content="{img}">', 1)
@@ -147,8 +152,9 @@ def build(B):
     for k in order:
         p = PRODUCTS[k]
         path = product_page(B, k, p)
-        cards.append(B.card(path, f"€{p['price']}", p["name"], p["blurb"][:90]))
-        hub_cards.append(B.card(path.split("/")[-1], f"€{p['price']}", p["name"], p["blurb"][:90]))
+        tag = "In the Bundle" if p.get("bundle_only") else f"€{p['price']}"
+        cards.append(B.card(path, tag, p["name"], p["blurb"][:90]))
+        hub_cards.append(B.card(path.split("/")[-1], tag, p["name"], p["blurb"][:90]))
     hub = '<h1>Budget & Planner Spreadsheet Templates</h1><p class="lede">Ready-made spreadsheets for Excel and Google Sheets. Instant download.</p><div class="grid">' + "".join(hub_cards) + "</div>"
     B.write("templates/index.html", B.page("Budget & Planner Spreadsheet Templates | ClarityPaperCo",
             "Budget planner, debt payoff, savings, Christmas, wedding and freelancer spreadsheet templates for Excel and Google Sheets.", hub, 1, "templates/index.html", None, "website"))
