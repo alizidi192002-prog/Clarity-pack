@@ -1,2 +1,4 @@
 *.json
 !pack/pins/*.json
+__pycache__/
+_site/
