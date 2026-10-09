@@ -204,3 +204,54 @@ PRODUCTS = {
 
 # image file -> product key (so schedule.json entries can be mapped back to a product)
 IMAGE_TO_PRODUCT = {img.split("/")[-1]: k for k, p in PRODUCTS.items() for img in p["images"]}
+
+# ---- Ramadan products (seasonal feed pins-products-ramadan.xml, see ext_products.RAMADAN) ----
+PRODUCTS.update({
+ "ramadan": dict(
+  slug="ramadan-budget-meal-planner", name="Ramadan Budget & Meal Planner", price="5.99", link=G + "fbuna", priority=False,
+  images=["ramadan/pin_ramadan_a.jpg", "ramadan/pin_ramadan_b.jpg"],
+  alt=("Ramadan Bundle (planner + zakat) €8.99", G + "vqdlcu"),
+  blurb="Plan Ramadan without the money stress: a 30-day iftar and suhoor planner with grocery, sadaqah and Eid budgets, plus a fasting, taraweeh and Quran tracker.",
+  features=["30-day iftar & suhoor meal planner with a shopping list", "Ramadan budget: groceries, iftar guests, sadaqah & charity, zakat al-Fitr, Eid clothes and gifts", "Planned vs spent for every area, with what's left of your Ramadan budget", "Fasting, taraweeh and Quran pages tracker — Excel and Google Sheets, any currency"],
+  titles=[
+   ("Ramadan Budget Planner Spreadsheet – Iftar, Suhoor, Sadaqah & Eid (Google Sheets, Excel)", "30-day iftar and suhoor planner with grocery, sadaqah and Eid budgets, plus a fasting, taraweeh and Quran tracker. Google Sheets & Excel. #ramadan #ramadanplanner #ramadan2027 #iftar #eid"),
+   ("Plan Ramadan Without the Money Stress – 30-Day Ramadan Planner", "30-day iftar and suhoor planner with grocery, sadaqah and Eid budgets, plus a fasting, taraweeh and Quran tracker. Google Sheets & Excel. #ramadan #ramadanplanner #ramadan2027 #iftar #eid"),
+   ("Ramadan 2027 Planner – Iftar Meal Plan and Grocery List Spreadsheet", "Plan 30 days of iftar and suhoor, build your grocery list and keep Ramadan spending on budget. Ramadan meal planner for Google Sheets and Excel."),
+   ("Ramadan Meal Planner for Families – Iftar & Suhoor Ideas, Shopping List", "A family Ramadan meal planner: iftar and suhoor for every day, a shopping list and a grocery budget. Printable or digital, Google Sheets and Excel."),
+   ("How to Budget for Ramadan and Eid – Simple Ramadan Budget Spreadsheet", "Set one Ramadan budget and track groceries, iftar guests, sadaqah and Eid gifts against it. Ramadan budget planner, instant download."),
+   ("Ramadan Tracker – Fasting, Taraweeh and Quran Progress in One Sheet", "Track fasts, taraweeh nights and Quran pages through Ramadan, alongside your iftar plan and budget. Ramadan planner spreadsheet."),
+   ("Ramadan Checklist & Planner 2027 – Prepare Before Ramadan Starts", "Get ready for Ramadan 2027: meal plan, grocery list, sadaqah budget and Eid budget in one planner. Google Sheets and Excel."),
+   ("Eid and Ramadan Budget Planner – Gifts, Clothes, Sadaqah and Zakat al-Fitr", "Plan Eid gifts and clothes, sadaqah and zakat al-Fitr alongside your Ramadan grocery budget. Simple spreadsheet, any currency."),
+  ]),
+ "zakat": dict(
+  slug="zakat-calculator-spreadsheet", name="Zakat Calculator", price="5.99", link=G + "katsc", priority=False,
+  images=["ramadan/pin_zakat_a.jpg", "ramadan/pin_zakat_b.jpg"],
+  alt=("Ramadan Bundle (planner + zakat) €8.99", G + "vqdlcu"),
+  blurb="Know exactly how much zakat you owe: works out the nisab from today's gold or silver price, values your gold by karat and calculates zakat due at 2.5%.",
+  features=["Nisab from today's gold or silver price, worked out for you", "Gold jewellery valued by karat (24k, 22k, 21k, 18k...)", "Cash, savings, shares, business stock and money owed to you, minus debts due", "Zakat due at 2.5%, zakat al-Fitr per person and a payment log — any currency"],
+  titles=[
+   ("Zakat Calculator Spreadsheet – Nisab, Gold by Karat & Zakat al-Fitr", "Works out the nisab from today's gold or silver price, values your gold by karat and calculates zakat due at 2.5%. Google Sheets & Excel. #zakat #ramadan #islamicfinance #muslim #zakatalfitr"),
+   ("Know Exactly How Much Zakat You Owe (Easy Spreadsheet)", "Works out the nisab from today's gold or silver price, values your gold by karat and calculates zakat due at 2.5%. Google Sheets & Excel. #zakat #ramadan #islamicfinance #muslim #zakatalfitr"),
+   ("How to Calculate Zakat on Gold, Savings and Shares – Zakat Spreadsheet", "Enter your gold, cash, savings and shares and see your zakat due at 2.5% after the nisab check. Zakat calculator for Google Sheets and Excel."),
+   ("Zakat on Gold Jewellery Calculator – 24k, 22k, 21k and 18k", "Value gold jewellery by karat and weight, compare with the nisab and get your zakat due. Simple zakat spreadsheet, any currency."),
+   ("Nisab Calculator 2027 – Gold and Silver Nisab Worked Out for You", "Enter today's gold or silver price and the sheet works out the nisab and whether zakat is due. Zakat calculator template."),
+   ("Zakat al-Fitr Calculator and Zakat Payment Log", "Calculate zakat al-Fitr for your household and log every zakat payment. Islamic finance spreadsheet for Google Sheets and Excel."),
+   ("Zakat for Business Owners – Stock, Cash and Debts Zakat Calculator", "Include business stock, cash and money owed to you, subtract debts due, and get your zakat at 2.5%. Zakat spreadsheet."),
+   ("Ramadan Zakat Checklist – Calculate Your Zakat Before Ramadan", "Get your zakat ready before Ramadan: nisab, assets, debts and zakat due in one easy spreadsheet. Google Sheets and Excel."),
+  ]),
+ "ramadanbundle": dict(
+  slug="ramadan-bundle-planner-zakat", name="Ramadan Bundle — Planner + Zakat Calculator", price="8.99", link=G + "vqdlcu", priority=False,
+  images=["ramadan/pin_ramadanbundle_a.jpg", "ramadan/pin_ramadanbundle_b.jpg"],
+  alt=None,
+  blurb="Everything for a calm, organised Ramadan: the Ramadan Budget & Meal Planner and the Zakat Calculator in one download, for less than buying them separately.",
+  features=["Ramadan Budget & Meal Planner: iftar & suhoor plan, grocery list, sadaqah and Eid budgets", "Fasting, taraweeh and Quran tracker", "Zakat Calculator: nisab, gold by karat, zakat due at 2.5% and zakat al-Fitr", "Excel and Google Sheets, works in any currency"],
+  titles=[
+   ("Ramadan Bundle – Ramadan Planner + Zakat Calculator Spreadsheets", "Ramadan budget and meal planner plus zakat calculator in one download. Google Sheets & Excel. #ramadan #ramadanplanner #zakat #eid #muslimplanner"),
+   ("Everything for a Calm, Organised Ramadan", "Ramadan budget and meal planner plus zakat calculator in one download. Google Sheets & Excel. #ramadan #ramadanplanner #zakat #eid #muslimplanner"),
+   ("Ramadan Planner Bundle 2027 – Meal Plan, Budget and Zakat in One", "Plan iftar and suhoor, keep Ramadan and Eid spending on budget and calculate your zakat. Two spreadsheets, one download."),
+   ("Muslim Planner Bundle – Ramadan Budget Planner and Zakat Calculator", "A Ramadan budget and meal planner plus a zakat calculator for Google Sheets and Excel. Save compared with buying separately."),
+   ("Prepare for Ramadan 2027 – Planner and Zakat Spreadsheets Bundle", "Get ready before Ramadan starts: meal plan, grocery list, sadaqah budget and zakat calculation in one bundle."),
+   ("Ramadan Gift for Your Family – Organised Iftars and Easy Zakat", "Make this Ramadan calmer: plan every iftar and suhoor and work out your zakat in minutes. Ramadan bundle spreadsheet."),
+  ]),
+})
+IMAGE_TO_PRODUCT = {img.split("/")[-1]: k for k, p in PRODUCTS.items() for img in p["images"]}
