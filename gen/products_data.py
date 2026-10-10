@@ -87,7 +87,7 @@ PRODUCTS = {
    ("Wedding on a Budget: Cost per Guest Calculator & Budget Planner", "See your cost per guest and where to cut. Affordable wedding budget planner with category split and vendor tracker."),
   ]),
  "freelancer": dict(
-  slug="freelancer-income-invoice-tracker", name="Freelancer Income & Invoice Tracker", price="6.99", link=G + "zpdnkk", bundle_only=True, priority=False, board="biz",
+  slug="freelancer-income-invoice-tracker", name="Freelancer Income & Invoice Tracker", price="6.99", link=G + "mdfzdj", priority=False, board="biz",
   images=["v3/pin_freelancer_a.jpg", "v3/pin_freelancer_b.jpg"],
   blurb="Know who owes you, what you really earned, and how much to put aside for tax.",
   features=["Invoice log: due dates from your payment terms, OVERDUE alert in red", "Expense log with categories", "Monthly dashboard: income received, expenses, profit, tax set-aside (you pick the %) and what you keep", "Total still owed by clients and average days to get paid"],
