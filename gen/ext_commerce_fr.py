@@ -40,6 +40,26 @@ P = {
     ("Affiche tarifs coiffure : un modèle simple et chic", "Affichez vos tarifs en salle ou partagez-les en ligne. Grille tarifaire A4, 4 thèmes, sans logiciel de graphisme."),
     ("Liste de prix esthéticienne – template PDF à imprimer", "Soins, épilation, ongles : une grille de prix claire avec durée et tarif. Modèle à personnaliser, export PDF."),
    ]),
+ "mariage": dict(slug="pack-mariage-a-personnaliser", name="Pack Mariage à personnaliser", price="12", link=G + "pack-mariage",
+   images=["pin_mariage_a.jpg", "pin_mariage_b.jpg"],
+   blurb="Panneau de bienvenue, menu et plan de table assortis, à personnaliser en 20 minutes dans votre navigateur, sans Canva.",
+   features=["Panneau de bienvenue, menu et plan de table", "4 thèmes : Ivoire & or, Sauge, Terracotta, Bleu nuit", "Tables et invités ajoutés en un clic", "Export PDF A4, à agrandir chez un imprimeur + mode d'emploi en français"],
+   titles=[
+    ("Plan de table mariage à personnaliser – modèle PDF élégant", "Un plan de table assorti au menu et au panneau de bienvenue. Modifiable dans le navigateur, 4 thèmes, PDF prêt à imprimer."),
+    ("Panneau de bienvenue mariage : modèle à imprimer", "Prénoms, date et petit mot : votre panneau de bienvenue en 10 minutes, sans Canva. Pack mariage avec menu et plan de table."),
+    ("Menu de mariage à personnaliser – idée déco de table", "Cocktail, entrée, plat, dessert : un menu de mariage élégant à modifier dans le navigateur et à imprimer en PDF."),
+    ("Papeterie de mariage DIY : bienvenue, menu, plan de table", "Trois modèles assortis pour votre mariage, 4 thèmes de couleurs. Personnalisez, enregistrez en PDF, imprimez."),
+   ]),
+ "cv": dict(slug="modeles-cv-francais", name="3 modèles de CV en français", price="7", link=G + "modeles-cv",
+   images=["pin_cv_a.jpg", "pin_cv_b.jpg"],
+   blurb="Trois styles de CV dans un seul fichier : Moderne, Classique et Minimal. Remplissez une fois, changez de style en un clic, exportez en PDF.",
+   features=["3 styles : Moderne, Classique, Minimal", "4 couleurs, photo en option", "Profil, expériences, formation, compétences, langues", "Export PDF A4 + mode d'emploi en français"],
+   titles=[
+    ("Modèle de CV moderne en français – à remplir et exporter en PDF", "Un CV propre en 15 minutes, sans Word ni Canva. 3 styles, 4 couleurs, photo en option."),
+    ("CV simple et efficace : 3 modèles dans un seul fichier", "Moderne, Classique, Minimal : remplissez votre CV une fois et changez de style en un clic. Export PDF A4."),
+    ("Exemple de CV pour assistante commerciale – modèle PDF", "Un exemple de CV clair avec profil, expériences et compétences. Modèle à personnaliser dans le navigateur."),
+    ("Modèle de CV sans photo ou avec photo – format A4", "Choisissez avec ou sans photo, 4 couleurs, 3 mises en page. Vos données restent sur votre ordinateur."),
+   ]),
  "guide": dict(slug="guide-fiche-google-30-minutes", name="Guide : optimiser sa fiche Google en 30 minutes", price="9", link=G + "fiche-google-30-minutes",
    images=["pin_guide_a.jpg", "pin_guide_b.jpg"],
    blurb="Six étapes de 5 minutes pour une fiche Google claire et complète : catégories, horaires, description, photos et avis. Pour les petits commerces.",
@@ -52,6 +72,10 @@ P = {
    ]),
 }
 ORDER = ["carte", "grille", "guide"]
+# From LAUNCH2 (set the day the 2 new Gumroad products go live) the daily pin rotates over 5 products.
+# Days before LAUNCH2 keep the old 3-product rotation, so already-published pins never change.
+LAUNCH2 = datetime.date(2026, 10, 22)  # Pack Mariage + CV live on Gumroad 21/10
+ORDER2 = ["mariage", "carte", "cv", "grille", "guide"]
 
 
 def algiers_today():
@@ -95,12 +119,15 @@ def item(d, k, n):
 def write_feed(today):
     horizon = today + datetime.timedelta(days=1)
     oldest = today - datetime.timedelta(days=KEEP_DAYS)
-    items, d, i = [], FEED_START, 0
+    items, d, i, j = [], FEED_START, 0, 0
     while d <= horizon:
-        k = ORDER[i % len(ORDER)]
+        if LAUNCH2 and d >= LAUNCH2:
+            k, n = ORDER2[j % len(ORDER2)], j // len(ORDER2); j += 1
+        else:
+            k, n = ORDER[i % len(ORDER)], i // len(ORDER); i += 1
         if d >= oldest:
-            items.insert(0, item(d, k, i // len(ORDER)))
-        d += datetime.timedelta(days=1); i += 1
+            items.insert(0, item(d, k, n))
+        d += datetime.timedelta(days=1)
     feed = ('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel>'
             f"<title>Clarity Digital — Outils pour petits commerces</title><link>{BASE}/outils/index.html</link>"
             "<description>Modèles et guides pour restaurants, salons et petits commerces.</description>"
@@ -111,7 +138,7 @@ def write_feed(today):
 
 def build(B):
     cards = ""
-    for k in ORDER:
+    for k in (ORDER2 if LAUNCH2 else ORDER):
         p = P[k]
         B.write(f"outils/{p['slug']}.html", page(p))
         cards += f'<li><a href="{p["slug"]}.html">{html.escape(p["name"])}</a> — {p["price"]} €</li>'
