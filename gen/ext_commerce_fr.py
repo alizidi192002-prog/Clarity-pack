@@ -74,7 +74,7 @@ P = {
 ORDER = ["carte", "grille", "guide"]
 # From LAUNCH2 (set the day the 2 new Gumroad products go live) the daily pin rotates over 5 products.
 # Days before LAUNCH2 keep the old 3-product rotation, so already-published pins never change.
-LAUNCH2 = None  # e.g. datetime.date(2026, 10, 22)
+LAUNCH2 = datetime.date(2026, 10, 22)  # Pack Mariage + CV live on Gumroad 21/10
 ORDER2 = ["mariage", "carte", "cv", "grille", "guide"]
 
 
