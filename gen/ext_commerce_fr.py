@@ -99,7 +99,7 @@ li{{margin:6px 0}}.btn{{display:block;text-align:center;background:#e5603f;color
 <div class="k">Outils pour petits commerces</div><h1>{html.escape(p['name'])}</h1><p class="l">{html.escape(p['blurb'])}</p>
 <img src="{img}" alt="{html.escape(p['name'])}"><h2>Ce que vous recevez</h2><ul>{feats}</ul>
 <a class="btn" href="{p['link']}">Télécharger — {p['price']} €</a><p class="n">Paiement sécurisé sur Gumroad · téléchargement immédiat</p>
-<p class="n">Besoin d'un site pour votre commerce ? <a class="o" href="https://alizidi192002-prog.github.io/Demo/lien/">Clarity Digital — maquette gratuite</a></p>
+<p class="n">Besoin d'un site pour votre commerce ? <a class="o" href="https://claritydigitalweb.com/lien/">Clarity Digital — maquette gratuite</a></p>
 </main></body></html>"""
 
 
