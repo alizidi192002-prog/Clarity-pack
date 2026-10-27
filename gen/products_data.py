@@ -203,6 +203,10 @@ PRODUCTS = {
 }
 
 # image file -> product key (so schedule.json entries can be mapped back to a product)
+
+# v4 pins (two new looks per product, added 2026-10-27)
+for _k in ["christmas","budget2027","bundle","paycheck","wedding","freelancer","debt","budget","subscription","habit","meal","savings","networth","bookkeeping","metaads"]:
+    PRODUCTS[_k]["images"] = list(PRODUCTS[_k]["images"]) + [f"v4/{_k}_d.jpg", f"v4/{_k}_e.jpg"]
 IMAGE_TO_PRODUCT = {img.split("/")[-1]: k for k, p in PRODUCTS.items() for img in p["images"]}
 
 # ---- Ramadan products (seasonal feed pins-products-ramadan.xml, see ext_products.RAMADAN) ----
